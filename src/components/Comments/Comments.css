@@ -1,0 +1,78 @@
+.add-comment-inner {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-bottom: 20px;
+}
+.comment-input {
+	max-width: 400px;
+	border-bottom: 1px solid white;
+}
+.comment-input input {
+	width: 300px;
+  color: white;
+  background-color: black;
+	font-size: 17px;
+}
+.comment-input input::placeholder {
+  color: grey;
+	font-size: 15px;
+}
+.comment-add__btn {
+	padding: 5px;
+	border: 1px solid lightgray;
+	border-radius: 15px;
+	background-color: lightgray;
+}
+.comments-list {
+	color: white;
+	margin-bottom: 15px;
+}
+.comments-list-main {
+	margin-bottom: 15px;
+}
+.comments-list-name {
+	margin-bottom: 5px;
+	font-weight: 700;
+}
+.comments-list-text {
+	color: rgb(158, 142, 248);
+	letter-spacing: 1px;
+	margin-bottom: 5px;
+}
+.comments-actions {
+	display: flex;
+	font-size: 15px;
+}
+.comments-list-reply {
+	letter-spacing: 1px;
+	cursor: pointer;
+	margin: 0 10px 10px 0;
+}
+.comments-list-name span {
+	margin-right: 15px;
+}
+.show-reply {
+	cursor: pointer;
+}
+.reply-add__btn {
+	margin-top: 5px;
+	color: white;
+	background: transparent;
+	font-size: 15px;
+	letter-spacing: 1px;
+}
+.reply-list {
+	margin-left: 20px;
+}
+.reply-list-text {
+	color: rgb(158, 142, 248);
+}
+@media screen and (max-width:375px) {
+  .add-comment-inner {
+		width: 300px;
+	}
+	.comment-input {
+		margin-bottom: 10px;
+	}
+}

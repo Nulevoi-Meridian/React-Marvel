@@ -1,0 +1,109 @@
+.account-settings {
+	display: flex;
+	align-items: center;
+  color: black;
+  background-color: white;
+	min-height: 600px;
+}
+.account-settings__inner {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: 25px;
+}
+.account-settings__info {
+	font-size: 20px;
+	margin-right: 50px;
+	margin-bottom: 30px;
+}
+.account-settings__title {
+	font-size: 25px;
+	margin-bottom: 20px;
+}
+.account-settings__order-title {
+	font-size: 25px;
+	margin-bottom: 10px;
+}
+.account-settings__order {
+	margin-bottom: 10px;
+}
+.update-settings__btn {
+	background-color: red;
+	color: white;
+	padding: 3px;
+	width: 110px;
+	text-align: center;
+	cursor: pointer;
+}
+.buy-history {
+	margin-top: 25px;
+	background-color: red;
+	width: 110px;
+	padding: 3px;
+	text-align: center;
+	color: white;
+	cursor: pointer;
+}
+
+/* Modal */
+.account-settings__modal-inner {
+	display: flex;
+	flex-direction: column;
+	width: 200px;
+	margin-top: 20px;
+	border: 1px solid black;
+	padding: 10px;
+}
+.account-settings__modal-inner input {
+	border: 1px solid black;
+	margin-bottom: 10px;
+	padding: 2px;
+}
+.updated-info {
+	background-color: red;
+	width: 30px;
+	text-align: center;
+	color: white;
+	cursor: pointer;
+}
+.back-from-settings {
+	text-align: center;
+	background-color: red;
+	font-size: 20px;
+	margin: 0 auto;
+	padding: 2px;
+	color: white;
+	width: 140px;
+	cursor: pointer;
+}
+@media screen and (max-width:768px) {
+  .account-settings {
+		min-height: auto;
+		padding: 25px 0;
+	}
+}
+@media screen and (max-width:425px) {
+  .account-settings__info {
+		margin: 0 auto;
+		margin-bottom: 30px;
+	}
+	.account-settings__inner {
+		margin-left: 0px;
+	}
+	.account-settings__modal {
+		margin: 0 auto;
+		margin-bottom: 25px;
+	}
+	.account-settings__modal-inner {
+		margin-top: 0px;
+	}
+}
+@media screen and (max-width:320px) {
+  .account-settings__title {
+		font-size: 20px;
+	}
+	.account-settings__order {
+		font-size: 18px;
+	}
+}
+
+

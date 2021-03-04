@@ -1,0 +1,25 @@
+.new-heroes {
+  margin-top: 15px;
+  padding-top: 25px;
+  background-color: black;
+  font-size: 25px;
+}
+.new-heroes__title {
+  margin-left: 10px;
+  margin-bottom: 25px;
+  color: white;
+  font-size: 30px;
+}
+.slider-wrapper{
+	padding: 0 20px;
+}
+
+@media screen and (max-width:425px) {
+  .chat-section {
+    right: 9px;
+  }
+  .new-heroes__title {
+    text-align: center;
+    font-size: 25px;
+  }
+}

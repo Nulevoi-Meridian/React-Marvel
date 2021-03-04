@@ -1,0 +1,58 @@
+.MuiButton-containedPrimary {
+  background-color: grey !important;
+  margin: 0 0 20px 30px !important;
+}
+.compare__item {
+	display: flex;
+	flex-wrap: wrap;
+}
+.compare__item-inner-wrapper {
+	display: flex;
+	flex-direction: column;
+	margin: 0 20px 15px 0;
+}
+.inner-wrapper__title {
+	text-align: center;
+	color: rgb(79, 13, 99);
+}
+.compare__item img {
+	height: 110px;
+	width: 100px;
+	margin: 0 auto;
+}
+.abilitys {
+	text-align: center;
+	margin: 10px 0;
+	color: rgb(37, 0, 201);
+}
+.inner-abilitys {
+	display: flex;
+	justify-content: space-between;
+}
+.inner-abilitys span {
+	margin-right: 10px;
+}
+.clear-list {
+	cursor: pointer;
+	text-align: center;
+	padding: 3px;
+	font-size: 15px;
+	color: white;
+	position: absolute;
+	top: 35px
+}
+.clear-list:hover {
+	color: white;
+	transition: all .3s ease-in-out;
+}
+
+@media screen and (max-width:768px) {
+  .compare__item-inner {
+		width: 33%;
+	}
+}
+@media screen and (max-width:425px) {
+  .compare__item-inner {
+		width: 50%;
+	}
+}

@@ -1,0 +1,22 @@
+.slider-section {
+  border-bottom: 1px solid #89898e;
+}
+.carousel-item {
+  text-align: center !important;
+}
+.carousel-item img {
+  background-size: contain !important;
+  max-width: 1200px !important;
+  width: 100% !important;
+  /* height: 600px !important; */
+}
+.carousel-inner {
+  background-color: black !important;         
+}
+.sr-only {
+  display: none !important;
+}
+.carousel-caption h3 {
+  font-size: 25px;
+  text-align: center;
+}

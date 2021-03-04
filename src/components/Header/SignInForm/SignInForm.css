@@ -1,0 +1,8 @@
+.sign-in__form {
+  cursor: pointer;
+  margin-right: 10px;
+}
+.sign-in__form:hover {
+  color: white;
+  transition: .4s linear;
+}

@@ -1,0 +1,126 @@
+.sign-in__modal {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 20;
+  visibility: visible;
+}
+.sign-in__modal-inner {
+  margin-top: 25px;
+  width: 400px;
+  height: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid red;
+  background-color: white;
+  font-family: 'Raleway', sans-serif;
+  position: relative;
+}
+.sign-in__close-icon img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 17px;
+  height: 17px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+.sign-in__modal-logo img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 40px 0;
+  width: 130px;
+  height: 50px;
+  position: relative;
+}
+.sign-in__modal-logo span {
+  font-size: 15px;
+  background-color: white;
+  color: red;
+  position: absolute;
+  top: 105px;
+  right: 130px;
+}
+.sign-in__modal-inp {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.sign-in__modal-inp span {
+  font-size: 13px;
+  background-color: white;
+  color: red;
+  position: absolute;
+  top: 123px;
+}
+.sign-in__modal-inp p {
+  font-size: 13px;
+  background-color: white;
+  color: red;
+  position: absolute;
+  top: 193px;
+}
+.in-inp__mail, .in-inp__pass {
+  width: 320px;
+  height: 40px;
+  border: 1px solid rgba(128, 128, 128, 0.5);
+  border-radius: 5px;
+  margin-bottom: 30px;
+  padding-left: 15px;
+  font-size: 15px;
+}
+.in-inp__mail:focus, .in-inp__pass:focus {
+  border: 1px solid lightskyblue;
+}
+.sign-in__modal-btn {
+  text-align: center;
+  width: 120px;
+  height: 30px;
+  background-color: red;
+  padding-top: 3px;
+  margin-bottom: 20px;
+}
+.sign-in__modal-btn button {
+  background-color: transparent;
+  color: white;
+  font-size: 15px;
+}
+.sign-in__modal-end {
+  cursor: pointer;
+  font-size: 15px;  
+  color: black;
+  margin-bottom: 20px;
+}
+.sign-in__modal-end:hover {
+    cursor: pointer;
+    transform: scale(1.2);  
+    color: red;
+    transition: all .4s ease-in-out;
+}
+.forgot-password {
+  cursor: pointer;
+  font-size: 15px;  
+  color: black;
+  margin-bottom: 15px;
+}
+.forgot-password:hover { 
+  color: rgb(52, 59, 156);
+  transition: all .4s ease-in-out;
+}
+
+/* Media */
+@media screen and (max-width:425px) {
+  .sign-in__modal-inner {
+    width: 280px; 
+  }
+  .in-inp__mail, .in-inp__pass {
+    width: 220px;
+  }
+}

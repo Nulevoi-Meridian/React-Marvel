@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+.shopping-cart {
+	background-color: grey;
+	min-height: 600px;
+	height: auto;
+}
+.shopping-cart__title {
+	color: black;
+	font-family: 'Roboto', sans-serif;
+	font-size: 20px;
+}
+.shopping-cart__title {
+	padding: 15px 0;
+	background-color: rgb(155, 155, 155);
+	margin-bottom: 35px;
+	font-weight: 700;
+	width: 60%;
+}
+.shopping-cart__wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	color: black;
+	font-family: 'Roboto', sans-serif;
+}
+.shopping-cart__inner {
+	font-weight: 400;
+	font-size: 16px;
+	width: 60%;
+}
+.shopping-cart__cart-section {
+	display: flex;
+	flex-wrap: wrap;
+	border-bottom: 1px solid black;
+	padding: 20px 0;
+	margin-bottom: 5px;
+}
+.cart-section__image {
+	width: 100px;
+	height: 130px;
+}
+.cart-section__inner-item {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	margin-left: 20px;
+}
+.inner-item__description {
+	font-weight: 700;
+	margin-bottom: 25px;
+}
+.inner-item__title {
+	margin-bottom: 15px;
+	font-weight: 500;
+}
+.shopping-cart-end {
+	width: 300px;
+	height: 400px;
+	margin-left: 20px;
+	background-color: black;
+	color: white;
+	margin-right: 15px;
+}
+.shopping-cart-end__title {
+	padding: 25px 0 25px 15px;
+	font-size: 20px;
+	border-bottom: 1px solid grey;
+}
+.shopping-cart-end__total {
+	padding: 25px 15px;
+	border-bottom: 1px solid grey;
+}
+.total-quantity {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 10px;
+}
+.total-price {
+	display: flex;
+	justify-content: space-between;
+}
+.empty-cart__item {
+	padding: 40px 5px;
+	text-align: center;
+	max-width: 500px;
+	margin: 0 auto;
+	color: black;
+	font-weight: 700;
+	font-size: 20px;
+	font-family: 'Roboto', sans-serif;
+}
+.cart-delete-btn img {
+	margin-top: 10px;
+	width: 25px;
+	cursor: pointer;
+}
+.pay-btn {
+	width: 150px;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 30px;
+	cursor: pointer;
+	padding: 2px;
+}
+.unlim-logo {
+	margin: 0 auto;
+	width: 50px;
+	height: 100px;
+	margin-top: 30px;
+}
+.inner-item__quantity {
+	margin-right: 10px;
+}
+.product-quantity {
+	background-color: grey;
+}

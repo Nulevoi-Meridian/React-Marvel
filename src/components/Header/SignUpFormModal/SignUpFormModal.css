@@ -1,0 +1,132 @@
+.sign-up__modal {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 20;
+  visibility: visible;
+}
+.sign-up__modal-inner {
+  margin-top: 25px;
+  width: 400px;
+  height: 580px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid red;
+  background-color: white;
+  font-family: 'Raleway', sans-serif;
+  position: relative;
+}
+.sign-up__close-icon img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 17px;
+  height: 17px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+.sign-up__modal-logo img {
+  margin: 40px 0;
+  width: 130px;
+  height: 50px;
+}
+.sign-up__modal-title {
+  color: red;
+  margin-bottom: 20px;
+}
+.password-error {
+  font-size: 13px;
+  position: absolute;
+  top: -7px;
+  background-color: white;
+  color: red;
+}
+.sign-up__modal-inp {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+.sign-up__modal-inp span {
+  font-size: 13px;
+  background-color: white;
+  color: red;
+  position: absolute;
+  top: 133px;
+}
+.up-inp__name, .up-inp__lastname, .up-inp__mail, .up-inp__pass, .up-inp__confirm-pass {
+  width: 320px;
+  height: 40px;
+  border: 1px solid rgba(128, 128, 128, 0.5);
+  border-radius: 5px;
+  margin-bottom: 30px;
+  padding-left: 15px;
+  font-size: 15px;
+}
+.password-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.up-inp__confirm-pass {
+  margin-bottom: 5px;
+}
+.up-inp__name:focus, .up-inp__lastname:focus, .up-inp__mail:focus, .up-inp__pass:focus, .up-inp__confirm-pass:focus {
+  border: 1px solid lightskyblue;
+}
+.sign-up__notification {
+  color: black;
+  font-size: 12px;
+  width: 220px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.password-length-error {
+  margin-bottom: 34px;
+  font-size: 12px;
+  color: red;
+}
+.sign-up__modal-btn {
+  text-align: center;
+  width: 200px;
+  height: 30px;
+  background-color: red;
+  padding-top: 3px;
+  margin-bottom: 25px;
+}
+.sign-up__modal-btn button {
+  background-color: transparent;
+  color: white;
+  font-size: 15px;
+}
+.sign-up__modal-end {
+  cursor: pointer;
+  font-size: 15px;  
+  color: black;
+}
+.sign-up__modal-end:hover {
+  color: red;
+  transform: scale(1.2); 
+  transition: all .4s ease-in-out;
+}
+
+/* Media */
+@media screen and (max-width:425px) {
+  .sign-up__modal-inner {
+    width: 280px; 
+  }
+  .up-inp__name, .up-inp__lastname, .up-inp__mail, .up-inp__pass, .up-inp__confirm-pass {
+    width: 220px;
+  }
+  .sign-up__modal-title {
+    font-size: 15px;
+  }
+}

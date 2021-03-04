@@ -1,0 +1,29 @@
+.slick-slider {
+  border: 1px solid white;
+  padding: 10px;
+  box-shadow: 1px 5px 15px 1px #FFFFFF;
+  width: 100% !important;
+}
+.slick-arrow {
+  display: none !important;
+}
+.slick-list {
+  margin-left: 15px !important;
+}
+.slick-track {
+  display: flex !important;
+}
+.slick-slide {
+  margin-right: 15px !important;
+  height: 430px !important;
+}
+.latest-img {
+  width: 100%;
+  height: 390px;
+}
+.latest-title {
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+  background: linear-gradient( 109.6deg,  rgba(14,11,56,1) 11.2%, rgba(239,37,37,1) 80.1%, rgba(14, 11, 56, 0.418) 10% );
+}

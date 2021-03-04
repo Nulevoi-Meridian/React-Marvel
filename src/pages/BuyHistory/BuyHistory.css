@@ -1,0 +1,55 @@
+.buy-history-section {
+  min-height: 600px;
+  padding: 0 25px;
+}
+.empty-history {
+  min-height: 600px;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.buy-history__inner {
+  display: flex;
+  justify-content: center;
+}
+.buy-history__item {
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid white;
+  margin: 10px 0;
+  text-align: center;
+}
+.buy-history__date {
+  align-self: center;
+  padding: 5px;
+}
+.buy-history__name {
+  align-self: center;
+  padding: 5px;
+}
+.buy-history__email {
+  align-self: center;
+  padding: 5px;
+}
+.buy-history__quantity {
+  align-self: center;
+  padding: 5px;
+}
+.buy-history__payment {
+  align-self: center;
+  padding: 5px;
+}
+.buy-history__product-name {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+@media screen and (max-width:768px) {
+  .buy-history-section {
+    min-height: 450px;
+  }
+}

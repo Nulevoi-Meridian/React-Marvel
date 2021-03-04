@@ -1,0 +1,122 @@
+.header {
+  padding: 10px 0;
+  border-bottom: 1px solid #89898e;
+  background-color: black;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid #89898e;
+  padding-bottom: 10px;
+}
+.header__logo {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+.header__title {
+  display: flex;
+  flex-direction: column;
+}
+.header__center {
+  display: flex;
+  flex-direction: column;
+}
+.header__end {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-auth {
+  display: flex;
+  justify-content: center;
+  width: 210px;
+}
+.end__favorites img {
+  width: 30px;
+  height: 30px;
+  margin-left: 30px;
+}
+.end__cart {
+  position: relative;
+}
+.end__cart img {
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+}
+.end__cart span {
+  text-align: center;
+  width: 22px;
+  padding: 3px;
+  color: #ed633c;
+  border: 1px solid #ed633c;
+  border-radius: 50%;
+  font-size: 13px;
+  position: absolute;
+  top: -11px;
+  left: 33px;
+}
+.header__nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 25px;
+  padding-top: 8px;
+}
+.header__nav span {
+  margin-left: 25px
+}
+.header__nav span:first-child {
+  margin-left: 0px
+}
+
+/* MEDIA */
+@media screen and (max-width:768px) {
+  .header__center {
+    display: none;
+  }
+  .header-auth {
+    width: 1px;
+  }
+  .end__favorites img {
+    margin-left: 0px;
+  }
+}
+@media screen and (max-width:650px) {
+  .header__title {
+    display: none;
+  }
+  .header__inner {
+    justify-content: space-evenly;
+  }
+}
+@media screen and (max-width:425px) {
+  .header__title {
+    display: none;
+  }
+  .header__nav {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width:375px) {
+  .header__end {
+    margin-right: 30px;
+  }
+}
+@media screen and (max-width:320px) {
+  .header__logo img {
+    width: 130px;
+  }
+  .header {
+    padding-top: 17px;
+  }
+}
+
+

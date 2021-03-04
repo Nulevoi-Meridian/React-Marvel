@@ -1,0 +1,109 @@
+.recovery-modal {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 20;
+  visibility: visible;
+}
+.recovery-modal-inner {
+  margin-top: 25px;
+  width: 400px;
+  height: 355px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid red;
+  background-color: white;
+  font-family: 'Raleway', sans-serif;
+  position: relative;
+}
+.recovery-modal__close-icon img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 17px;
+  height: 17px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+.recovery-logo img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 40px 0;
+  width: 130px;
+  height: 50px;
+}
+.recovery-inp span {
+  margin-bottom: 20px;
+  color: black;
+}
+.email-error {
+  font-size: 13px;
+  position: absolute;
+  top: 33px;
+  background-color: white;
+  color: red;
+}
+.verification-code {
+  font-size: 13px;
+  color: red;
+  margin-bottom: 10px;
+}
+.recovery-inp {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+.recovery-mail {
+  width: 320px;
+  height: 40px;
+  border: 1px solid rgba(128, 128, 128, 0.5);
+  border-radius: 5px;
+  margin-bottom: 30px;
+  padding-left: 15px;
+  font-size: 15px;
+}
+.recovery-mail:focus {
+  border: 1px solid lightskyblue;
+}
+.recovery-btn {
+  text-align: center;
+  width: 200px;
+  height: 30px;
+  background-color: red;
+  padding-top: 3px;
+  margin-bottom: 30px;
+}
+.recovery-btn button {
+  background-color: transparent;
+  color: white;
+  font-size: 15px;
+}
+.recovery-end {
+  cursor: pointer;
+  font-size: 15px;  
+  color: black;
+}
+.recovery-end:hover {
+    cursor: pointer;
+    transform: scale(1.2); 
+    color: red;
+    transition: all .4s ease-in-out;
+}
+
+/* Media */
+@media screen and (max-width:425px) {
+  .recovery-modal-inner {
+    width: 280px; 
+  }
+  .recovery-mail {
+    width: 220px;
+  }
+}

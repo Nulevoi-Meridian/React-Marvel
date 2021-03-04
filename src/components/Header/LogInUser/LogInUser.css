@@ -1,0 +1,78 @@
+.user-form {
+  display: flex;
+}
+.user-name {
+  position: relative;
+  color: rgb(255, 255, 255);
+  padding: 2px;
+  font-size: 22px;
+}
+.user-description {
+  cursor: pointer;
+}
+.user-description:hover {
+  color: white;
+  transition: all .4s ease-out;
+}
+.modal-user {
+  text-align: center;
+  position: absolute;
+  width: 300px;
+  height: auto;
+  right: 2px;
+  top: 26px;
+  z-index: 2;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 4px 3px 15px 1px white;
+}
+.modal-user a {
+  margin-top: 10px;
+  color: grey;
+  text-decoration: none;
+}
+.modal-user a:hover {
+  color: white;
+  transition: all .4s ease-in-out;
+}
+.log-out-btn {
+  color: grey;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.log-out-btn:hover {
+  color: white;
+  transition: all .4s ease-out;
+}
+.modal-user span {
+  padding: 10px 0;
+}
+.close-settings {
+  color: grey;
+  font-size: 15px;
+  text-transform: none;
+  cursor: pointer;
+  margin: 10px 0;
+}
+.close-settings:hover {
+  color: white;
+  transition: all .4s ease-out;
+}
+.end__admin-btn {
+  background-color: rgb(199, 21, 21);
+  color: black;
+  width: 60px;
+  cursor: pointer;
+  border-radius: 15px;
+  padding: 3px;
+}
+
+@media screen and (max-width:768px) {
+  .modal-user {
+  right: -98px;
+  }
+}

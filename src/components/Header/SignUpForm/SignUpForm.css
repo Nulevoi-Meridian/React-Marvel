@@ -1,0 +1,9 @@
+.sign-up__form {
+  cursor: pointer;
+  padding-left: 10px;
+  border-left: 1px solid white;
+}
+.sign-up__form:hover {
+  color: white;
+  transition: .4s linear;
+}

@@ -1,0 +1,75 @@
+.burger-btn {
+  width: 35px;
+  height: 4px;
+  margin: 15px;
+  border-radius: 5px;
+  background: white;
+  box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
+  transition: all .5s ease-in-out;
+  cursor: pointer;
+  position: fixed;
+  top: 14px;
+  right: 1px;
+  z-index: 15;
+}
+.burger-btn::before,
+.burger-btn::after {
+  content: '';
+  position: absolute;
+  width: 35px;
+  height: 4px;
+  border-radius: 5px;
+  background: white;
+  box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
+  transition: all .5s ease-in-out;
+}
+.burger-btn::before {
+  transform: translateY(-12px);
+}
+.burger-btn::after {
+  transform: translateY(12px);
+}
+.burger-btn.open.burger-btn {
+  transform: translateX(-50px);
+  background: transparent;
+  box-shadow: none;
+}
+.burger-btn.open.burger-btn::before {
+  transform: rotate(45deg) translate(35px, -35px)
+}
+.burger-btn.open.burger-btn::after {
+  transform: rotate(-45deg) translate(35px, 35px)
+}
+.burger-menu {
+ z-index: 2;
+}
+.burger-inner{
+  color: white;
+  position: fixed;
+  width: 320px;
+  height: 100%;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  transition: all .5s ease-out;
+}
+.burger-inner.active {
+  transform: translateX(0);
+}
+.burger-item {
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(90, 92, 106, 0.808) 0%, rgba(32, 45, 58, 0.801) 81.3% );
+  display: flex;
+  flex-direction: column;
+  padding: 30px 10px;
+}
+.burger-auth {
+  display: flex;
+  justify-content: center;
+  transform: translateY(-100%);
+  transition: all .5s ease-out;
+}
+.burger-auth.active {
+  transform: translateY(80%);
+}
