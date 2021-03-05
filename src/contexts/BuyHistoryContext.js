@@ -1,6 +1,6 @@
 import React, { useEffect, useReducer } from 'react';
 import { dataBase } from '../firebase';
-import { auth } from '../firebase';
+import { useAuth } from '../contexts/AuthContext';
 
 export const buyHistoryContext = React.createContext();
 
@@ -20,12 +20,12 @@ const reducer = (state = INIT_STATE, action) => {
 
 const BuyHistoryContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
+  const { currentUser } = useAuth();
 
   //Получаем данные истории покупок
   useEffect(() => {
-    auth.onAuthStateChanged(user => {
-      if (user) {
-        dataBase.collection('Buyer-Info ' + user.uid).onSnapshot((querySnapshot) => {
+      if (currentUser) {
+        dataBase.collection('Buyer-Info ' + currentUser.uid).onSnapshot((querySnapshot) => {
           const item = querySnapshot.docs.map((doc) => ({
             ...doc.data(),
             id: doc.id
@@ -33,9 +33,7 @@ const BuyHistoryContextProvider = ({ children }) => {
           getBuyerHistory(item)
         })
       }
-    })
-
-  }, []);
+  }, [currentUser]);
 
   //Помещаем товар в state истории покупок
   const getBuyerHistory = (data) => {

@@ -66,10 +66,26 @@
 }
 .burger-auth {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   transform: translateY(-100%);
   transition: all .5s ease-out;
 }
 .burger-auth.active {
   transform: translateY(80%);
+}
+.auth-from {
+  display: flex;
+  margin-bottom: 15px;
+}
+.to-shopping-cart {
+  color: white !important;
+  text-decoration: none !important;
+}
+.to-favorites {
+  color: white !important;
+  text-decoration: none !important;
+}
+.burger-cart {
+  margin-bottom: 15px;
 }

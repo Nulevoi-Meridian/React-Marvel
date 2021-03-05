@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './AccountSettings.css';
 import { Link } from 'react-router-dom';
-import { auth } from '../../firebase';
 import { dataBase } from '../../firebase';
 import { useAuth } from '../../contexts/AuthContext';
 
@@ -10,7 +9,7 @@ const AccountSettings = () => {
     const { currentUser } = useAuth();
 
     const [modalOpen, setModalOpen] = useState(false);
-    const [item, setItem] = useState('')
+    const [item, setItem] = useState('');
 
     const openModal = () => {
         setModalOpen(!modalOpen)
@@ -25,15 +24,13 @@ const AccountSettings = () => {
     }
 
     const setOrderInfo = () => {
-        auth.onAuthStateChanged(user => {
-            if (user) {
-                dataBase.collection('SignedUpUsersData').doc(user.uid).update({
-                    cell: item.cell,
-                    country: item.country,
-                    deliveryAdress: item.delivery
-                })
-            }
-        })
+        if (currentUser) {
+            dataBase.collection('SignedUpUsersData').doc(currentUser.uid).update({
+                cell: item.cell,
+                country: item.country,
+                deliveryAdress: item.delivery
+            })
+        }
         setModalOpen(!modalOpen);
     }
 

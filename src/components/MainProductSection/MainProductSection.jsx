@@ -35,14 +35,9 @@ const MainProductSection = () => {
     const [page, setPage] = useState(1);
     const [searchValue, setSearchValue] = useState("");
     const [filterType, setFilterType] = useState("");
-    const [filterTeam, setFilterTeam] = useState("");
 
     const getFilterType = (event) => {
         setFilterType(event.target.value);
-    };
-
-    const getFilterTeam = (event) => {
-        setFilterTeam(event.target.value);
     };
 
     const onPaginationChange = (e, value) => {
@@ -54,7 +49,7 @@ const MainProductSection = () => {
         } else {
             getProductData(`${API_PRODUCTS}?q=${searchValue}&_limit=6&_page=${page}`);
         }
-    }, [page, searchValue, filterType, filterTeam]);
+    }, [page, searchValue, filterType]);
 
     //Material ui выпадающий список
     const BootstrapInput = withStyles((theme) => ({
@@ -126,24 +121,6 @@ const MainProductSection = () => {
                             <MenuItem value="Villains">Villains</MenuItem>
                         </Select>
                         <div className="item-filter__title">Choose Type</div>
-                    </FormControl>
-                    <FormControl>
-                        <InputLabel id="demo-customized-select-label">{filterTeam}</InputLabel>
-                        <Select
-                            labelId="demo-customized-select-label"
-                            id="demo-customized-select"
-                            value={filterTeam}
-                            onChange={getFilterTeam}
-                            input={<BootstrapInput />}
-                        >
-                            <MenuItem value="">
-                                <em>None</em>
-                            </MenuItem>
-                            <MenuItem value="Avengers">Avengers</MenuItem>
-                            <MenuItem value="Guardians">Guardians</MenuItem>
-                            <MenuItem value="X-Men">X-Men</MenuItem>
-                        </Select>
-                        <div className="item-filter__title">Choose Team</div>
                     </FormControl>
                 </div>
                 <CompairePopOver />

@@ -1,8 +1,7 @@
-import React, { useEffect, useReducer, useState } from 'react';
+import React, { useEffect, useReducer } from 'react';
 import axios from 'axios';
 import { API_PRODUCTS } from '../helpers/constants';
 import { dataBase } from '../firebase';
-import { auth } from '../firebase';
 import { useAuth } from '../contexts/AuthContext';
 
 export const shoppingCartContext = React.createContext();
@@ -28,6 +27,7 @@ const reducer = (state = INIT_STATE, action) => {
 
 const ShoppingCartContextProvider = ({ children }) => {
     const { currentUser } = useAuth();
+
     const [state, dispatch] = useReducer(reducer, INIT_STATE);
 
     //Получаем товар из db.json
@@ -35,20 +35,6 @@ const ShoppingCartContextProvider = ({ children }) => {
         const { data } = await axios(`${API_PRODUCTS}/${productId}`);
         addProductToBase(data);
     }
-
-  
-    // const userRef = firestore.collection('users').doc(currentUser.uid)
-
-    // const historyRef = await userRef.collection('orderHistory').get()
-
-    // const historyData = historyRef.docs.map(history => history.data())
-
-    // const userRef = firestore.collection('users').doc(currentUser.uid)
-
-    // const historyRef = await userRef.collection('orderHistory').get()
-
-    // const historyData = historyRef.docs.map(history => history.data())
-
 
     //Отправляем данные товара в базу (firestore)
     const addProductToBase = ({ image, price, title }) => {
@@ -59,38 +45,28 @@ const ShoppingCartContextProvider = ({ children }) => {
             quantity: 1,
             descriptionCart: 'Model + comics + poster'
         }
-        const unsubscribe = auth.onAuthStateChanged(user => {
-            if (user) {
-                dataBase.collection('UserShoppingCart ' + user.uid).add(
+            if (currentUser) {
+                dataBase.collection('UserShoppingCart ' + currentUser.uid).add(
                     shoppingCartProduct
                 )
             }
-        })
-        return unsubscribe;
     }
 
     //Получаем все товары для отображения в корзине
     useEffect(() => {
-        auth.onAuthStateChanged(user => {
-            if (user) {
-                dataBase.collection('UserShoppingCart ' + user.uid).onSnapshot((querySnapshot) => {
-                    const item = querySnapshot.docs.map((doc) => ({
-                        ...doc.data(),
-                        id: doc.id
-                    }))
-                    addProductToCart(item)
+        if (currentUser) {
+            dataBase.collection('UserShoppingCart ' + currentUser.uid).onSnapshot((querySnapshot) => {
+                const item = querySnapshot.docs.map((doc) => ({
+                    ...doc.data(),
+                    id: doc.id
+                }))
+                dispatch({
+                    type: "ADD_PRODUCT_TO CART",
+                    payload: item
                 })
-            }
-        })
-    }, [])
-
-    //Помещаем товар в state корзины
-    const addProductToCart = (item) => {
-        dispatch({
-            type: "ADD_PRODUCT_TO CART",
-            payload: item
-        })
-    }
+            })
+        }
+    }, [currentUser])
 
     //Очищаем state корзины после logout
     useEffect(() => {
@@ -110,28 +86,20 @@ const ShoppingCartContextProvider = ({ children }) => {
 
     //Удаляем карточку товара из корзины
     const deleteProductCart = (productId) => {
-        const unsubscribe = auth.onAuthStateChanged(user => {
-            if (user) {
-                dataBase.collection('UserShoppingCart ' + user.uid).doc(productId).delete();
+            if (currentUser) {
+                dataBase.collection('UserShoppingCart ' + currentUser.uid).doc(productId).delete();
             }
-        })
-        return unsubscribe;
     }
 
     //Очищаем корзину на firestore после оплаты
-
     const clearFirestoreCart = async () => {
-        const unsubscribe = auth.onAuthStateChanged(async (user) => {
-            if (user) {
-                const data = await dataBase.collection('UserShoppingCart ' + user.uid).get()
-                console.log(data)
+            if (currentUser) {
+                const data = await dataBase.collection('UserShoppingCart ' + currentUser.uid).get()
                 data.docs.map(item => {
-                    dataBase.collection('UserShoppingCart ' + user.uid).doc(item.id).delete()
+                    dataBase.collection('UserShoppingCart ' + currentUser.uid).doc(item.id).delete()
                 })
             }
-        })
-        return unsubscribe;
-    }
+        }
 
     return (
         <shoppingCartContext.Provider value={{

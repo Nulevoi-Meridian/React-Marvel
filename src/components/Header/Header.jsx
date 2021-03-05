@@ -65,12 +65,12 @@ const Header = () => {
                     </MediaQuery>
                 </div>{/*<!--/"header__inner"--> */}
 
-                <div className="header__nav">
+                {/* <div className="header__nav">
                     <span>New Heroes</span>
                     <span>All Characters</span>
                     <span>Comics</span>
                     <span>Games</span>
-                </div>
+                </div> */}
             </div>{/*<!--/header--> */}
         </>
     );

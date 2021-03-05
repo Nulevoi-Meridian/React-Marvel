@@ -10,16 +10,17 @@ const RecentlyViewed = () => {
   const [recentlyViewedData, setRecentlyViewedData] = useState(recentlyViewedList);
 
   useEffect(() => {
-    
+
   }, [recentlyViewedData])
-  
-  if(currentUser?.user === null) {
+
+  if (currentUser?.user === null) {
     localStorage.setItem('recentlyViewed', '[]');
   }
-  
+
   return (
     <div className="recently-viewed-section">
       <div className="container">
+          <div className="recently-viewed-title">Recently Viewed</div>
         <div className="recently-viewed-section__inner">
           {recentlyViewedData?.map(item => (
             <div key={item.cartId} className="recently-viewed-section__list-item">

@@ -4,6 +4,7 @@ import SignUpForm from '../SignUpForm/SignUpForm';
 import './HamburgerMenu.css';
 import { useAuth } from '../../../contexts/AuthContext';
 import LogInUser from '../LogInUser/LogInUser';
+import { Link } from '@material-ui/core';
 
 const HamburgerMenu = () => {
     const [burgerMenuActive, setBurgerMenuActive] = useState(false);
@@ -16,17 +17,20 @@ const HamburgerMenu = () => {
             </div>
             <div className={burgerMenuActive ? 'burger-inner active' : 'burger-inner'}
                 onClick={() => setBurgerMenuActive(false)}
-            >  
-                <div className="burger-item">
+            >
+                <div className="burger-item" onClick={(e) => e.stopPropagation()}>
                     <div className={burgerMenuActive ? 'burger-auth active' : 'burger-auth'}>
-                        {currentUser?.user !== null ? <LogInUser /> :
-                            <>
-                                <SignInForm />
-                                <SignUpForm />
-                            </>
-                        }
+                        <div className="auth-from">
+                            {currentUser?.user !== null ? <LogInUser /> :
+                                <>
+                                    <SignInForm />
+                                    <SignUpForm />
+                                </>
+                            }
+                        </div>
+                        <Link className="to-shopping-cart" to="/shopping-cart"><div className="burger-cart">Cart</div></Link>
+                        <Link className="to-favorites" to="/favorites"><div className="burger-cart">Favorites</div></Link>
                     </div>
-                    
                 </div>
             </div>
         </div>

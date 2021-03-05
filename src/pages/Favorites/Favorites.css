@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  min-height: 600px;
+  min-height: 635px;
   padding: 50px 10px;
 }
 .favorites-section__list-item {
@@ -99,7 +99,7 @@
   transition: .6s linear;
 }
 .empty-favorites {
-  max-width: 960px;
+  max-width: 1030px;
   margin: 0 auto;
   text-align: center;
   color: white;

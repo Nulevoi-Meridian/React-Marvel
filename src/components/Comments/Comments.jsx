@@ -52,7 +52,7 @@ const Comments = ({ id }) => {
                             <span>{item.date}</span>
                         </div>
                         <div className="comments-list-text">{item.comment}</div>
-                        <div className="comments-actions">
+                        {/* <div className="comments-actions">
                             <div
                                 onClick={() => setOpenReplyInput(!openReplyInput)}
                                 className="comments-list-reply"
@@ -61,7 +61,7 @@ const Comments = ({ id }) => {
                                 onClick={() => setShowReply(!showReply)}
                                 className="show-reply"
                             >Show Reply</div>
-                        </div>
+                        </div> */}
                     </div>
                 ))}
                 {openReplyInput ? <div className="comments-list-reply">
