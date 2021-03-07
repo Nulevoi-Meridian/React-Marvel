@@ -6,13 +6,18 @@ import ProductDetailsRange from '../../components/ProductDetailsRange/ProductDet
 import Comments from '../../components/Comments/Comments';
 import { Link } from 'react-router-dom';
 import RecentlyViewed from '../../components/RecentlyViewed/RecentlyViewed';
+import {animateScroll as scroll} from 'react-scroll'
 
 const ProductDetails = (props) => {
     const { productDetails, getDetails } = useContext(productsContext);
 
     useEffect(() => {
+    scroll.scrollToTop()
+      }, [props.match.params.id]);
+
+    useEffect(() => {
         getDetails(props.match.params.id);
-    }, []);
+    }, [props.match.params.id]);
 
     return (
         <>
